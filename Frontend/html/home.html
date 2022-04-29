@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+
+<main class="container h-100vh mt-5 mb-3">
+    <div class="row">
+        {% if event %}
+        <div class="col-md-7">
+            <h3>{{event.name}}</h3>
+            <img class="m-3" src="/media/{{event.image}}" height="350px" width="550px">
+            <div class="m-3">
+                <details open>
+                    <summary>About this Event</summary>
+                    <p>{{event.about|safe}}</p>
+                </details>
+            </div>
+        </div>
+        {% endif %}
+        {% if edates %}
+        <div class="col-md-1"></div>
+        <div class="col-md-4 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Details</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row justify-content-center m-3">
+                        <div class="col">
+                            <h5 class="card-title">Date</h5>
+                            {% for ed in edates %}
+                            <p class="card-text"> {{ed.date}} </p>
+                            {% endfor %}
+                        </div>
+                        <div class="col">
+                            <h5 class="card-title">Timmings</h5>
+                            {% for ed in edates %}
+                            <p class="card-text"> {{ed.start_time}} - {{ed.end_time}}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-lg btn-outline-success ">Join Now!! Just for <span style="color: red; font-weight: bold;">{{event.price}}</span>/- ONLY</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</main>
+
+
+{% endblock body %}

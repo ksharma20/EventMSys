@@ -1,0 +1,4 @@
+django
+djangorestframework
+pycryptodome
+django-cors-headers

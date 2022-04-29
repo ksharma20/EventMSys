@@ -1,0 +1,125 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample API Docs for Event Managment System (eventMsys)",
+    "version": "1.0.0",
+    "title": "Event Managment System",
+    "contact": {
+      "email": "keshav.sharma@yesavail.digital"
+    }
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Event",
+      "description": "Everything about your Events"
+    },
+    {
+      "name": "Payments",
+      "description": "All about checkout, order and payments"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/apis/events": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Check Events",
+        "description": "Check the All avaialble events",
+        "operationId": "events",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "To Get json format",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/apis/event/{eventPK}": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Get the Date of particular Event",
+        "description": "Returns a Dates registered for that Event",
+        "operationId": "geteventById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "eventPK",
+            "in": "path",
+            "description": "ID of Event to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/payment/checkout": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Send data to create Order",
+        "description": "",
+        "operationId": "createorder",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/payment/checkin": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Send data to Mark Order paid or Not paid",
+        "description": "",
+        "operationId": "updateorder",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    }
+  }
+}
