@@ -1,2 +1,5 @@
-# EventMSys
-This is a web site created using Django &amp; Django rest Framework for Backend and Bootstrap + jQuery for frontend.
+# Event Managment System (EventMSys)
+### Technologies used :
+- **For Backend** - Django & DRF 
+- **For Frontend** - Bootstrap & JQuery
+- **Others** - Docker, OpenAPI/Swagger & Paytm Payments Gateway
