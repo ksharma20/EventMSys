@@ -10,4 +10,5 @@ services:
     command: ["python", "-m", "http.server", "8080"]
     ports:
       - "8080:8080"
-  
+    depends_on:
+      - backend

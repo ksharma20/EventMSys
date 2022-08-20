@@ -61,7 +61,7 @@ ROOT_URLCONF = 'eventMsys.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ '/YesAvail/Websites/EventMSys/Frontend/html/' ],
+        'DIRS': [ 'Frontend\html' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
